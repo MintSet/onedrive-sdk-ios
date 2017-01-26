@@ -140,6 +140,8 @@
 		10FF89C71B4B4424001A2234 /* ODAADAccountBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 10FF89C51B4B4424001A2234 /* ODAADAccountBridge.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		10FF89C81B4B4424001A2234 /* ODAADAccountBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FF89C61B4B4424001A2234 /* ODAADAccountBridge.m */; };
 		28CE8267244D96C3B385DE95 /* libPods-OneDriveSDKTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A80DBCCDB6C761D36FB8CBDD /* libPods-OneDriveSDKTests.a */; };
+		4CBEABCE1E39DF5D00BE8467 /* ODClient+UserEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBEABCC1E39DF5D00BE8467 /* ODClient+UserEmail.h */; };
+		4CBEABCF1E39DF5D00BE8467 /* ODClient+UserEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBEABCD1E39DF5D00BE8467 /* ODClient+UserEmail.m */; };
 		7CF5250B1CEA7E9B00E7F086 /* ODAsyncOperationStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF524CE1CEA7E9B00E7F086 /* ODAsyncOperationStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CF5250C1CEA7E9B00E7F086 /* ODAsyncOperationStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF524CF1CEA7E9B00E7F086 /* ODAsyncOperationStatus.m */; };
 		7CF5250D1CEA7E9B00E7F086 /* ODAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF524D01CEA7E9B00E7F086 /* ODAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -483,6 +485,8 @@
 		10FF89C51B4B4424001A2234 /* ODAADAccountBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODAADAccountBridge.h; sourceTree = "<group>"; };
 		10FF89C61B4B4424001A2234 /* ODAADAccountBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODAADAccountBridge.m; sourceTree = "<group>"; };
 		11BC54005EED17791D179C16 /* Pods-OneDriveSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneDriveSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneDriveSDK/Pods-OneDriveSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		4CBEABCC1E39DF5D00BE8467 /* ODClient+UserEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ODClient+UserEmail.h"; path = "../Extensions/ODClient+UserEmail.h"; sourceTree = "<group>"; };
+		4CBEABCD1E39DF5D00BE8467 /* ODClient+UserEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ODClient+UserEmail.m"; path = "../Extensions/ODClient+UserEmail.m"; sourceTree = "<group>"; };
 		5E3D8C1D3DE438DDC5A5C689 /* Pods-OneDriveSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneDriveSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneDriveSDK/Pods-OneDriveSDK.release.xcconfig"; sourceTree = "<group>"; };
 		7960493E1BE2BAEEAA7BD57C /* Pods-OneDriveSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneDriveSDKTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneDriveSDKTests/Pods-OneDriveSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CF524CE1CEA7E9B00E7F086 /* ODAsyncOperationStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODAsyncOperationStatus.h; sourceTree = "<group>"; };
@@ -736,6 +740,8 @@
 				10007C7F1B332A6A00E4ED17 /* ODClient+Authentication.m */,
 				10007C821B332BBD00E4ED17 /* ODClient+DefaultConfiguration.h */,
 				10007C831B332BBD00E4ED17 /* ODClient+DefaultConfiguration.m */,
+				4CBEABCC1E39DF5D00BE8467 /* ODClient+UserEmail.h */,
+				4CBEABCD1E39DF5D00BE8467 /* ODClient+UserEmail.m */,
 				100D33E81B3DE37F003576F7 /* NSError+OneDriveSDK.h */,
 				10007CA41B3B1B4100E4ED17 /* NSError+OneDriveSDK.m */,
 			);
@@ -1228,6 +1234,7 @@
 				1003AAC11B0BF2750039017A /* ODAsyncURLSessionDataTask.h in Headers */,
 				7CF525291CEA7E9B00E7F086 /* ODModels.h in Headers */,
 				7CF525441CEA7E9B00E7F086 /* ODUploadSession.h in Headers */,
+				4CBEABCE1E39DF5D00BE8467 /* ODClient+UserEmail.h in Headers */,
 				7CF525F61CEA7EA300E7F086 /* ODVersionsCollectionRequest.h in Headers */,
 				7CF525DE1CEA7EA300E7F086 /* ODShareRequestBuilder.h in Headers */,
 				7CF525DA1CEA7EA300E7F086 /* ODSharedCollectionRequestBuilder.h in Headers */,
@@ -1638,6 +1645,7 @@
 				10B4D2541AF821C40083D86C /* ODTopOptions.m in Sources */,
 				1086B2BC1B6B1C0600B68EAA /* ODLogger.m in Sources */,
 				7CF525B41CEA7EA300E7F086 /* ODItemCopyRequestBuilder.m in Sources */,
+				4CBEABCF1E39DF5D00BE8467 /* ODClient+UserEmail.m in Sources */,
 				7CF525F91CEA7EA300E7F086 /* ODVersionsCollectionRequestBuilder.m in Sources */,
 				101104041B1E8F7D00A83BAB /* ODMSAServiceInfo.m in Sources */,
 				10007C701B309D5200E4ED17 /* ODAppConfiguration+DefaultConfiguration.m in Sources */,

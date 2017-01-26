@@ -57,6 +57,7 @@
     [aCoder encodeObject:self.logoutURL forKey:@"logoutURL"];
     [aCoder encodeObject:self.apiEndpoint forKey:@"apiEndpoint"];
     [aCoder encodeObject:self.capability forKey:@"capability"];
+    [aCoder encodeObject:self.userEmail forKey:@"userEmail"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -74,6 +75,7 @@
         _logoutURL = [aDecoder decodeObjectForKey:@"logoutURL"];
         _capability = [aDecoder decodeObjectForKey:@"capability"];
         _apiEndpoint = [aDecoder decodeObjectForKey:@"apiEndpoint"];
+        _userEmail = [aDecoder decodeObjectForKey:@"userEmail"];
     }
     return self;
 }
