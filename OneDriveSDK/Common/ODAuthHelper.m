@@ -64,6 +64,11 @@
     // Active Directory obfuscates the id and calls it id_token
     if (!accountId){
         accountId = session[OD_AUTH_TOKEN_ID];
+        
+        if ([serviceInfo.scopes containsObject:@"openid"]) {
+            // Decode id_token (jwt) and set user email
+            serviceInfo.userEmail = [ODAuthHelper decodeIdToken:accountId][@"email"];
+        }
     }
     if (accountId && expires){
         return [[ODAccountSession alloc] initWithId:accountId
@@ -159,6 +164,21 @@
         *error = [NSError errorWithDomain:OD_AUTH_ERROR_DOMAIN code:ODServiceError userInfo:userInfo];
     }
     return authResponse;
+}
+
+// decode payload part
++ (NSDictionary *)decodeIdToken:(NSString *)idToken
+{
+    NSString *payload = [[idToken componentsSeparatedByString:@"."] objectAtIndex:1];
+    int requiredLength = (int)(4 * ceil((float)payload.length / 4.0));
+    int numberOfPads = requiredLength - (int)payload.length;
+    if (numberOfPads > 0) {
+        NSString *paddings = [[NSString string] stringByPaddingToLength:numberOfPads withString:@"=" startingAtIndex:0];
+        payload = [payload stringByAppendingString:paddings];
+    }
+    NSData *jwtData = [[NSData alloc] initWithBase64EncodedString:payload options:0];
+    
+    return [NSJSONSerialization JSONObjectWithData:jwtData options:0 error:nil];
 }
 
 @end

@@ -23,6 +23,7 @@
 #import "ODAppConfiguration+DefaultConfiguration.h"
 #import "ODAccountSession.h"
 #import "ODAuthProvider.h"
+#import "ODServiceInfo.h"
 
 @implementation ODClient (DefaultConfiguration)
 
@@ -256,6 +257,11 @@
 - (NSString *)accountId
 {
     return self.authProvider.accountSession.accountId;
+}
+
+- (NSString *)userEmail
+{
+    return self.authProvider.accountSession.serviceInfo.userEmail;
 }
 
 @end

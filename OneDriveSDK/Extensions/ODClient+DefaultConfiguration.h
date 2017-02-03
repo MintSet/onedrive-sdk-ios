@@ -36,6 +36,11 @@
 @property (readonly) NSString *accountId;
 
 /**
+ The email of the user.
+ */
+@property (readonly) NSString *userEmail;
+
+/**
  Loads the current client if one exists, if one doesn't it will pop UI and ask for login info.
  @param completion The completion handler to be called when an authenticated client is created.
  @see authenticatedClientWithCompletion: or loadCurrentClient:
