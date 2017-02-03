@@ -67,7 +67,9 @@
         
         if ([serviceInfo.scopes containsObject:@"openid"]) {
             // Decode id_token (jwt) and set user email
-            serviceInfo.userEmail = [ODAuthHelper decodeIdToken:accountId][@"email"];
+            NSDictionary *payloads = [ODAuthHelper decodeIdToken:accountId];
+            serviceInfo.userEmail = payloads[@"email"];
+            accountId = payloads[@"tid"];
         }
     }
     if (accountId && expires){
