@@ -13,9 +13,9 @@ This fork add ability to get email address of signed user. Original repository [
 ### 1. Setting your application Id and scopes
 
 ```
-[ODClient setMicrosoftAccountAppId:<applicationId> scopes:<scopes>, @"openid"]
+[ODClient setMicrosoftAccountAppId:<applicationId> scopes:@[<scopes>, @"openid"]]
 ```
-`@"openid"` must be set.
+`@"openid"` must be add to array of scopes.
 
 ### 2. Getting an authenticated ODClient object
 Get an ODClient as described in original [README.md](https://github.com/OneDrive/onedrive-sdk-ios#23-getting-an-authenticated-odclient-object).
