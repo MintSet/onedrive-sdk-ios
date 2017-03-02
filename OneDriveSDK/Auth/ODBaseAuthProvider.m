@@ -215,15 +215,17 @@
             [self.getTokenTask cancel];  // will invoke completion with NSURLErrorCancelled
         }
     }
-    
-    if (self.accountSession) {
-        [self.accountStore deleteAccount:self.accountSession];
-        self.accountSession = nil;
-    }
-    
+
     NSURLRequest *logoutRequest = [self logoutRequest];
     if (logoutRequest){
         [[self.httpProvider dataTaskWithRequest:[self logoutRequest] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+            // Remove local data after response from server without errors
+            if (!error) {
+                if (self.accountSession) {
+                    [self.accountStore deleteAccount:self.accountSession];
+                    self.accountSession = nil;
+                }
+            }
             if (completionHandler){
                 completionHandler(error);
             }
